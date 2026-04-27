@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ধন্যবাদ! – আমের রাজা</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --amber:        #E8890C;
+  --amber-light:  #FFB547;
+  --amber-pale:   #FFF3DC;
+  --green:        #1D5C2E;
+  --green-mid:    #2E7D46;
+  --cream:        #FDFAF4;
+  --warm-white:   #FFF8ED;
+  --charcoal:     #1A1A1A;
+  --gray-mid:     #6B6B6B;
+  --gray-light:   #E8E3DC;
+  --shadow-gold:  rgba(232,137,12,0.20);
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', sans-serif;
+}
+
+html, body {
+  min-height: 100vh;
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--charcoal);
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   BACKGROUND CANVAS
+   ========================================================= */
+body {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 20%, rgba(232,137,12,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 80%, rgba(29,92,46,0.08) 0%, transparent 60%),
+    var(--warm-white);
+}
+
+/* =========================================================
+   PAGE WRAPPER
+   ========================================================= */
+.page {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 40px 24px;
+  position: relative;
+}
+
+/* Decorative floating circles */
+.deco {
+  position: fixed; border-radius: 50%;
+  pointer-events: none; z-index: 0;
+}
+.deco-1 {
+  width: 500px; height: 500px;
+  top: -150px; right: -150px;
+  background: radial-gradient(circle, rgba(232,137,12,0.07) 0%, transparent 70%);
+}
+.deco-2 {
+  width: 400px; height: 400px;
+  bottom: -100px; left: -100px;
+  background: radial-gradient(circle, rgba(29,92,46,0.07) 0%, transparent 70%);
+}
+
+/* =========================================================
+   CARD
+   ========================================================= */
+.card {
+  position: relative; z-index: 1;
+  background: #fff;
+  border-radius: 32px;
+  max-width: 620px; width: 100%;
+  padding: 60px 56px;
+  box-shadow:
+    0 4px 6px rgba(0,0,0,0.03),
+    0 20px 60px rgba(0,0,0,0.08),
+    0 0 0 1px rgba(232,137,12,0.10);
+  text-align: center;
+  animation: popIn 0.7s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+
+/* Top accent bar */
+.card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 5px;
+  background: linear-gradient(90deg, var(--amber), var(--green), var(--amber));
+  border-radius: 32px 32px 0 0;
+}
+
+/* =========================================================
+   SUCCESS ICON
+   ========================================================= */
+.success-icon-wrap {
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--amber-pale), #FFE8B0);
+  margin: 0 auto 28px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 52px;
+  box-shadow: 0 0 0 12px rgba(232,137,12,0.07), 0 0 0 24px rgba(232,137,12,0.04);
+  animation: pulse-ring 2s ease-out 0.5s infinite;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+.bengali-title {
+  font-size: 15px; font-weight: 600;
+  color: var(--amber); letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.main-title {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 6vw, 50px);
+  font-weight: 900; line-height: 1.1;
+  color: var(--charcoal);
+  margin-bottom: 16px;
+}
+.main-title em { color: var(--amber); font-style: normal; }
+
+.subtitle {
+  font-size: 16px; color: var(--gray-mid);
+  line-height: 1.7; margin-bottom: 40px;
+}
+
+/* =========================================================
+   ORDER SUMMARY BOX
+   ========================================================= */
+.order-summary {
+  background: var(--cream);
+  border: 1.5px solid var(--gray-light);
+  border-radius: 18px;
+  padding: 28px 30px;
+  text-align: left;
+  margin-bottom: 36px;
+}
+.summary-title {
+  font-size: 13px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--gray-mid); margin-bottom: 20px;
+}
+.summary-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--gray-light);
+  font-size: 14px;
+}
+.summary-row:last-child { border-bottom: none; }
+.summary-row .key { color: var(--gray-mid); }
+.summary-row .val {
+  font-weight: 600; color: var(--charcoal);
+  text-align: right; max-width: 60%;
+}
+.summary-row .val.green { color: var(--green-mid); }
+.summary-row .val.amber { color: var(--amber); }
+
+/* =========================================================
+   STEPS / WHAT'S NEXT
+   ========================================================= */
+.next-steps {
+  margin-bottom: 36px;
+}
+.next-steps h3 {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 700;
+  color: var(--charcoal); margin-bottom: 20px;
+}
+.steps-list {
+  display: flex; flex-direction: column; gap: 14px;
+  text-align: left;
+}
+.step-item {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: var(--amber-pale);
+  border: 1px solid rgba(232,137,12,0.15);
+}
+.step-num {
+  width: 32px; height: 32px; flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--amber);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 800;
+}
+.step-content h4 { font-size: 14px; font-weight: 700; color: var(--charcoal); margin-bottom: 3px; }
+.step-content p  { font-size: 13px; color: var(--gray-mid); }
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+.actions {
+  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+}
+.btn-home {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--green);
+  color: #fff;
+  padding: 15px 32px;
+  border-radius: 50px;
+  font-size: 15px; font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(29,92,46,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-home:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(29,92,46,0.3); }
+.btn-share {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 2px solid var(--amber);
+  color: var(--amber);
+  padding: 13px 28px;
+  border-radius: 50px;
+  font-size: 15px; font-weight: 700;
+  background: transparent; cursor: pointer;
+  font-family: var(--font-body);
+  transition: background 0.2s, color 0.2s;
+}
+.btn-share:hover { background: var(--amber); color: #fff; }
+
+/* =========================================================
+   CONFETTI
+   ========================================================= */
+.confetti-container {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none; z-index: 999; overflow: hidden;
+}
+.confetti-piece {
+  position: absolute;
+  width: 10px; height: 10px;
+  border-radius: 2px;
+  animation: confettiFall linear forwards;
+}
+
+/* =========================================================
+   LOGO STRIP
+   ========================================================= */
+.logo-strip {
+  margin-bottom: 28px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.logo-strip .icon { font-size: 24px; }
+.logo-strip span {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 800; color: var(--green);
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.85) translateY(30px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(232,137,12,0.25), 0 0 0 0 rgba(232,137,12,0.10); }
+  70%  { box-shadow: 0 0 0 18px rgba(232,137,12,0), 0 0 0 36px rgba(232,137,12,0); }
+  100% { box-shadow: 0 0 0 0 rgba(232,137,12,0), 0 0 0 0 rgba(232,137,12,0); }
+}
+@keyframes confettiFall {
+  0%   { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+@media (max-width: 600px) {
+  .card { padding: 40px 28px; border-radius: 24px; }
+  .actions { flex-direction: column; }
+  .btn-home, .btn-share { justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<div class="deco deco-1"></div>
+<div class="deco deco-2"></div>
+
+<!-- Confetti -->
+<div class="confetti-container" id="confetti"></div>
+
+<div class="page">
+  <div class="card">
+
+    <div class="logo-strip">
+      <span class="icon">🥭</span>
+      <span>আমের রাজা</span>
+    </div>
+
+    <div class="success-icon-wrap">✅</div>
+
+    <div class="bengali-title">অর্ডার সফলভাবে জমা হয়েছে!</div>
+    <h1 class="main-title">Thank You,<br><em id="customerName">বন্ধু!</em></h1>
+    <p class="subtitle">আপনার অর্ডারটি আমরা পেয়েছি এবং শীঘ্রই আপনার সাথে যোগাযোগ করব।<br>তাজা আম আসছে আপনার পথে! 🥭</p>
+
+    <!-- Order Summary -->
+    <div class="order-summary" id="orderSummary" style="display:none">
+      <div class="summary-title">📋 অর্ডার সারসংক্ষেপ</div>
+      <div class="summary-row">
+        <span class="key">👤 নাম</span>
+        <span class="val" id="sumName">—</span>
+      </div>
+      <div class="summary-row">
+        <span class="key">📞 ফোন</span>
+        <span class="val" id="sumPhone">—</span>
+      </div>
+      <div class="summary-row">
+        <span class="key">📦 প্যাকেজ</span>
+        <span class="val amber" id="sumPkg">—</span>
+      </div>
+      <div class="summary-row">
+        <span class="key">🚚 ডেলিভারি</span>
+        <span class="val green" id="sumLoc">—</span>
+      </div>
+      <div class="summary-row">
+        <span class="key">📍 ঠিকানা</span>
+        <span class="val" id="sumAddress">—</span>
+      </div>
+    </div>
+
+    <!-- What's Next -->
+    <div class="next-steps">
+      <h3>পরবর্তী ধাপ কী?</h3>
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-num">১</div>
+          <div class="step-content">
+            <h4>📞 কনফার্মেশন কল</h4>
+            <p>আমরা ৩০ মিনিটের মধ্যে আপনার নম্বরে কল করে অর্ডার নিশ্চিত করব।</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">২</div>
+          <div class="step-content">
+            <h4>🌾 ফার্ম থেকে প্যাকিং</h4>
+            <p>আপনার জন্য তাজা আম বাগান থেকে বাছাই করে সুন্দরভাবে প্যাক করা হবে।</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">৩</div>
+          <div class="step-content">
+            <h4>🚚 ডেলিভারি</h4>
+            <p>ঢাকার ভেতরে ২৪ ঘণ্টা, ঢাকার বাইরে ৪৮ ঘণ্টার মধ্যে পৌঁছে যাবে।</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a href="index.html" class="btn-home">🏠 হোমে ফিরে যান</a>
+      <button class="btn-share" onclick="shareOrder()">🔗 শেয়ার করুন</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// Parse URL params
+const params = new URLSearchParams(window.location.search);
+const name    = params.get('name')    || '';
+const phone   = params.get('phone')   || '';
+const pkg     = params.get('pkg')     || '';
+const loc     = params.get('loc')     || '';
+const address = params.get('address') || '';
+
+// Set customer name in heading
+if (name) {
+  document.getElementById('customerName').textContent = name + '!';
+}
+
+// Fill summary
+const pkgMap = { '5kg': '🥭 5 KG – ৳৯৫০', '10kg': '🥭🥭 10 KG – ৳১৭৫০', '20kg': '🥭🥭🥭 20 KG – ৳৩২০০' };
+const locMap = { 'inside': 'ঢাকার ভেতরে – ৳৮০', 'outside': 'ঢাকার বাইরে – ৳১২০' };
+
+if (name || phone || pkg || address) {
+  document.getElementById('orderSummary').style.display = 'block';
+  document.getElementById('sumName').textContent    = name    || '—';
+  document.getElementById('sumPhone').textContent   = phone   || '—';
+  document.getElementById('sumPkg').textContent     = pkgMap[pkg]  || pkg  || '—';
+  document.getElementById('sumLoc').textContent     = locMap[loc]  || loc  || '—';
+  document.getElementById('sumAddress').textContent = address || '—';
+}
+
+// Confetti
+function createConfetti() {
+  const container = document.getElementById('confetti');
+  const colors = ['#E8890C','#FFB547','#1D5C2E','#2E7D46','#FFF3DC','#FFD580','#B85C00'];
+  for (let i = 0; i < 80; i++) {
+    const piece = document.createElement('div');
+    piece.className = 'confetti-piece';
+    piece.style.left = Math.random() * 100 + 'vw';
+    piece.style.top = '-20px';
+    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.width = (6 + Math.random() * 8) + 'px';
+    piece.style.height = (6 + Math.random() * 8) + 'px';
+    piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+    piece.style.animationDuration = (2 + Math.random() * 3) + 's';
+    piece.style.animationDelay = (Math.random() * 1.5) + 's';
+    container.appendChild(piece);
+  }
+  setTimeout(() => container.innerHTML = '', 5000);
+}
+
+createConfetti();
+
+// Share
+function shareOrder() {
+  const text = `🥭 আমের রাজা থেকে অর্ডার দিলাম! তাজা প্রিমিয়াম আম এখন ঘরে বসেই অর্ডার করুন। #আমেররাজা #BangladeshMango`;
+  if (navigator.share) {
+    navigator.share({ title: 'আমের রাজা', text, url: window.location.origin }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(text).then(() => alert('লিংক কপি হয়েছে! ✅'));
+  }
+}
+</script>
+</body>
+</html>

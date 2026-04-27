@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>আমের রাজা – Premium Mango Bangladesh</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=Kalpurush&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   GLOBAL / TOKENS
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --amber:   #E8890C;
+  --amber-light: #FFB547;
+  --amber-pale:  #FFF3DC;
+  --green:   #1D5C2E;
+  --green-mid: #2E7D46;
+  --cream:   #FDFAF4;
+  --warm-white: #FFF8ED;
+  --charcoal: #1A1A1A;
+  --gray-mid: #6B6B6B;
+  --gray-light: #E8E3DC;
+  --shadow-gold: rgba(232,137,12,0.18);
+  --radius: 18px;
+  --radius-sm: 10px;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--charcoal);
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   NAV
+   ========================================================= */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 60px;
+  background: rgba(253,250,244,0.82);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(232,137,12,0.12);
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-logo .icon { font-size: 28px; }
+.nav-logo span {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 700;
+  color: var(--green);
+  letter-spacing: -0.5px;
+}
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+  text-decoration: none;
+  font-size: 14px; font-weight: 500;
+  color: var(--charcoal);
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--amber); }
+.nav-cta {
+  background: var(--green);
+  color: #fff;
+  padding: 10px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 14px; font-weight: 600;
+  transition: background 0.25s, transform 0.2s;
+}
+.nav-cta:hover { background: var(--amber); transform: translateY(-1px); }
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+#hero {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(232,137,12,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 70% at 10% 80%, rgba(29,92,46,0.08) 0%, transparent 60%),
+    var(--warm-white);
+  display: flex; align-items: center;
+  padding: 120px 60px 80px;
+  gap: 60px;
+  position: relative; overflow: hidden;
+}
+.hero-bg-text {
+  position: absolute; right: -30px; top: 50%; transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 320px; font-weight: 900; line-height: 1;
+  color: rgba(232,137,12,0.05);
+  user-select: none; pointer-events: none;
+  white-space: nowrap;
+}
+.hero-content { flex: 1; max-width: 560px; z-index: 1; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--amber-pale);
+  border: 1px solid rgba(232,137,12,0.3);
+  border-radius: 50px;
+  padding: 6px 18px;
+  font-size: 13px; font-weight: 600; color: var(--amber);
+  margin-bottom: 28px;
+  animation: fadeSlideUp 0.6s ease both;
+}
+.hero-badge::before { content: "✦"; }
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 5vw, 68px);
+  font-weight: 900; line-height: 1.08;
+  color: var(--charcoal);
+  margin-bottom: 24px;
+  animation: fadeSlideUp 0.7s 0.1s ease both;
+}
+.hero-title em { color: var(--amber); font-style: normal; }
+.hero-title .green { color: var(--green); }
+
+.hero-sub {
+  font-size: 17px; font-weight: 400; color: var(--gray-mid);
+  line-height: 1.7; margin-bottom: 40px;
+  animation: fadeSlideUp 0.7s 0.2s ease both;
+}
+.hero-actions {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  animation: fadeSlideUp 0.7s 0.3s ease both;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--amber);
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-size: 16px; font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 30px var(--shadow-gold);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 40px var(--shadow-gold); }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 2px solid var(--green);
+  color: var(--green);
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 16px; font-weight: 600;
+  text-decoration: none;
+  transition: background 0.25s, color 0.25s;
+}
+.btn-outline:hover { background: var(--green); color: #fff; }
+
+.hero-stats {
+  display: flex; gap: 40px; margin-top: 52px;
+  animation: fadeSlideUp 0.7s 0.4s ease both;
+}
+.stat-item { text-align: left; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 34px; font-weight: 900;
+  color: var(--charcoal);
+  line-height: 1;
+}
+.stat-label { font-size: 13px; color: var(--gray-mid); margin-top: 4px; }
+
+.hero-visual {
+  flex: 1; display: flex; justify-content: center; align-items: center;
+  z-index: 1; position: relative;
+  animation: fadeSlideUp 0.8s 0.2s ease both;
+}
+.mango-illustration {
+  width: 420px; height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #FFD580, #E8890C 55%, #B85C00 90%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 180px;
+  box-shadow: 0 30px 80px rgba(232,137,12,0.35), 0 0 0 20px rgba(232,137,12,0.06), 0 0 0 40px rgba(232,137,12,0.04);
+  animation: float 4s ease-in-out infinite;
+  position: relative;
+}
+.mango-illustration::after {
+  content: '';
+  position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);
+  width: 280px; height: 30px;
+  background: radial-gradient(ellipse, rgba(100,50,0,0.18) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.badge-float {
+  position: absolute;
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+  font-size: 13px; font-weight: 600;
+  white-space: nowrap;
+}
+.badge-float.top-left { top: 30px; left: -10px; color: var(--green); border-left: 3px solid var(--green); }
+.badge-float.bottom-right { bottom: 50px; right: -10px; color: var(--amber); border-left: 3px solid var(--amber); }
+
+/* =========================================================
+   SECTION: WHY US
+   ========================================================= */
+#why {
+  padding: 100px 60px;
+  background: var(--green);
+  position: relative; overflow: hidden;
+}
+#why::before {
+  content: '';
+  position: absolute; top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(255,181,71,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.section-label {
+  font-size: 12px; font-weight: 600; letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--amber-light);
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800; line-height: 1.1;
+  margin-bottom: 16px;
+}
+#why .section-title, #why .section-label { color: #fff; }
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px; margin-top: 60px;
+}
+.why-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius);
+  padding: 36px 30px;
+  transition: background 0.3s, transform 0.3s;
+}
+.why-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); }
+.why-icon { font-size: 38px; margin-bottom: 20px; display: block; }
+.why-card h3 { font-family: var(--font-display); font-size: 21px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.why-card p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; }
+
+/* =========================================================
+   SECTION: PACKAGES
+   ========================================================= */
+#packages {
+  padding: 110px 60px;
+  background:
+    linear-gradient(180deg, var(--cream) 0%, var(--warm-white) 100%);
+  position: relative;
+}
+#packages .section-label { color: var(--amber); }
+#packages .section-title { color: var(--charcoal); }
+.packages-intro { color: var(--gray-mid); font-size: 17px; max-width: 520px; line-height: 1.7; margin-bottom: 60px; }
+
+.packages-grid {
+  display: grid;
+  /* Force exactly 3 equal columns */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px; 
+  max-width: 1100px; /* Slightly increased to give the 3 cards more breathing room */
+  margin: 0 auto; /* Centers the grid in the section */
+}
+.pkg-card {
+  border-radius: 24px;
+  padding: 40px 36px;
+  position: relative; overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.pkg-card:hover { transform: translateY(-8px); }
+
+/* Standard */
+.pkg-card.standard {
+  background: #fff;
+  border: 2px solid var(--gray-light);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.pkg-card.standard:hover { box-shadow: 0 20px 50px rgba(0,0,0,0.10); border-color: var(--amber); }
+
+/* Popular */
+.pkg-card.popular {
+  background: var(--amber);
+  border: 2px solid var(--amber);
+  box-shadow: 0 16px 50px rgba(232,137,12,0.35);
+}
+.pkg-card.popular:hover { box-shadow: 0 28px 70px rgba(232,137,12,0.45); }
+
+/* Premium */
+.pkg-card.premium {
+  background: var(--green);
+  border: 2px solid var(--green);
+  box-shadow: 0 16px 50px rgba(29,92,46,0.25);
+}
+.pkg-card.premium:hover { box-shadow: 0 28px 70px rgba(29,92,46,0.35); }
+
+.pkg-badge {
+  position: absolute; top: 20px; right: 20px;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+}
+.popular .pkg-badge { background: rgba(0,0,0,0.15); color: #fff; }
+.premium .pkg-badge { background: rgba(255,181,71,0.2); color: var(--amber-light); }
+.standard .pkg-badge { background: var(--amber-pale); color: var(--amber); }
+
+.pkg-emoji { font-size: 52px; margin-bottom: 20px; display: block; }
+.pkg-weight {
+  font-family: var(--font-display);
+  font-size: 42px; font-weight: 900; line-height: 1;
+  margin-bottom: 8px;
+}
+.standard .pkg-weight { color: var(--charcoal); }
+.popular .pkg-weight, .premium .pkg-weight { color: #fff; }
+
+.pkg-name {
+  font-size: 14px; font-weight: 500; margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+.standard .pkg-name { color: var(--gray-mid); }
+.popular .pkg-name, .premium .pkg-name { color: rgba(255,255,255,0.75); }
+
+.pkg-divider { height: 1px; margin-bottom: 24px; }
+.standard .pkg-divider { background: var(--gray-light); }
+.popular .pkg-divider { background: rgba(255,255,255,0.2); }
+.premium .pkg-divider { background: rgba(255,255,255,0.15); }
+
+.pkg-features { list-style: none; margin-bottom: 32px; }
+.pkg-features li {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px; margin-bottom: 12px;
+}
+.standard .pkg-features li { color: var(--charcoal); }
+.popular .pkg-features li, .premium .pkg-features li { color: rgba(255,255,255,0.88); }
+.pkg-features li::before { content: "✓"; font-weight: 700; font-size: 13px; flex-shrink: 0; }
+.standard .pkg-features li::before { color: var(--green); }
+.popular .pkg-features li::before, .premium .pkg-features li::before { color: rgba(255,255,255,0.6); }
+
+.pkg-price {
+  margin-bottom: 24px;
+}
+.price-main {
+  font-family: var(--font-display);
+  font-size: 36px; font-weight: 900;
+}
+.standard .price-main { color: var(--charcoal); }
+.popular .price-main, .premium .price-main { color: #fff; }
+.price-note { font-size: 12px; margin-top: 4px; }
+.standard .price-note { color: var(--gray-mid); }
+.popular .price-note, .premium .price-note { color: rgba(255,255,255,0.6); }
+
+.pkg-btn {
+  display: block; width: 100%; text-align: center;
+  padding: 15px;
+  border-radius: 50px;
+  font-size: 15px; font-weight: 700;
+  text-decoration: none; cursor: pointer;
+  border: none; font-family: var(--font-body);
+  transition: transform 0.2s, opacity 0.2s;
+}
+.pkg-btn:hover { transform: scale(1.03); opacity: 0.92; }
+.standard .pkg-btn { background: var(--green); color: #fff; }
+.popular .pkg-btn { background: #fff; color: var(--amber); }
+.premium .pkg-btn { background: var(--amber); color: #fff; }
+
+/* =========================================================
+   SECTION: SHIPPING
+   ========================================================= */
+#shipping {
+  padding: 100px 60px;
+  background:
+    linear-gradient(135deg, #0F3320 0%, #1D5C2E 50%, #0F3320 100%);
+  position: relative; overflow: hidden;
+}
+#shipping::after {
+  content: '🚚';
+  position: absolute; right: 80px; bottom: 40px;
+  font-size: 220px; opacity: 0.05;
+}
+#shipping .section-label { color: var(--amber-light); }
+#shipping .section-title { color: #fff; }
+.shipping-sub { color: rgba(255,255,255,0.6); font-size: 16px; margin-bottom: 56px; line-height: 1.6; }
+
+.shipping-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px; max-width: 750px;
+}
+.ship-card {
+  border-radius: 20px;
+  padding: 36px 32px;
+  display: flex; gap: 24px; align-items: flex-start;
+  position: relative;
+  transition: transform 0.3s;
+}
+.ship-card:hover { transform: translateY(-4px); }
+
+.ship-card.inside {
+  background: rgba(232,137,12,0.12);
+  border: 1.5px solid rgba(232,137,12,0.3);
+}
+.ship-card.outside {
+  background: rgba(255,255,255,0.05);
+  border: 1.5px solid rgba(255,255,255,0.12);
+}
+.ship-icon {
+  width: 58px; height: 58px; border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; flex-shrink: 0;
+}
+.inside .ship-icon { background: rgba(232,137,12,0.2); }
+.outside .ship-icon { background: rgba(255,255,255,0.08); }
+
+.ship-info h3 {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 700; color: #fff;
+  margin-bottom: 8px;
+}
+.ship-info p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 16px; }
+.ship-price {
+  display: inline-flex; align-items: baseline; gap: 6px;
+}
+.ship-price strong {
+  font-family: var(--font-display);
+  font-size: 32px; font-weight: 900;
+}
+.inside .ship-price strong { color: var(--amber-light); }
+.outside .ship-price strong { color: #fff; }
+.ship-price span { font-size: 14px; color: rgba(255,255,255,0.5); }
+
+/* =========================================================
+   SECTION: ORDER FORM
+   ========================================================= */
+#order {
+  padding: 110px 60px;
+  background: var(--warm-white);
+  position: relative;
+}
+#order::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--amber), var(--green), var(--amber));
+}
+.order-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: start;
+  max-width: 1100px;
+}
+.order-info .section-label { color: var(--amber); }
+.order-info .section-title { color: var(--charcoal); margin-bottom: 20px; }
+.order-info p { color: var(--gray-mid); font-size: 16px; line-height: 1.7; margin-bottom: 32px; }
+
+.trust-list { list-style: none; }
+.trust-list li {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--gray-light);
+  font-size: 15px; color: var(--charcoal);
+}
+.trust-list li:last-child { border-bottom: none; }
+.trust-list li .ticon { font-size: 20px; }
+
+/* Form */
+.order-form-box {
+  background: #fff;
+  border-radius: 24px;
+  padding: 48px 44px;
+  box-shadow: 0 12px 50px rgba(0,0,0,0.07);
+  border: 1px solid var(--gray-light);
+}
+.form-title {
+  font-family: var(--font-display);
+  font-size: 26px; font-weight: 800;
+  color: var(--charcoal); margin-bottom: 6px;
+}
+.form-subtitle { font-size: 14px; color: var(--gray-mid); margin-bottom: 32px; }
+
+.form-group { margin-bottom: 22px; }
+label {
+  display: block;
+  font-size: 13px; font-weight: 600; color: var(--charcoal);
+  margin-bottom: 8px; letter-spacing: 0.3px;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1.5px solid var(--gray-light);
+  border-radius: var(--radius-sm);
+  font-size: 15px; font-family: var(--font-body);
+  color: var(--charcoal);
+  background: var(--cream);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px rgba(232,137,12,0.12);
+}
+select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+
+.shipping-notice {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--amber-pale);
+  border: 1px solid rgba(232,137,12,0.25);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 13px; color: var(--amber);
+  font-weight: 600; margin-bottom: 22px;
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.btn-submit {
+  width: 100%;
+  background: linear-gradient(135deg, var(--amber), #D4760A);
+  color: #fff;
+  padding: 17px;
+  border: none; border-radius: 50px;
+  font-size: 17px; font-weight: 700;
+  font-family: var(--font-body);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  box-shadow: 0 8px 28px var(--shadow-gold);
+  transition: transform 0.25s, box-shadow 0.25s;
+  margin-top: 8px;
+}
+.btn-submit:hover { transform: translateY(-2px); box-shadow: 0 14px 38px var(--shadow-gold); }
+.form-secure {
+  text-align: center; font-size: 12px; color: var(--gray-mid);
+  margin-top: 14px; display: flex; align-items: center; justify-content: center; gap: 6px;
+}
+
+/* =========================================================
+   SECTION: TESTIMONIALS
+   ========================================================= */
+#testimonials {
+  padding: 100px 60px;
+  background: var(--cream);
+}
+#testimonials .section-label { color: var(--amber); }
+#testimonials .section-title { color: var(--charcoal); margin-bottom: 52px; }
+
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.testi-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px 30px;
+  border: 1px solid var(--gray-light);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.testi-card:hover { transform: translateY(-5px); box-shadow: 0 16px 44px rgba(0,0,0,0.09); }
+.testi-card::before {
+  content: '"';
+  font-family: var(--font-display);
+  font-size: 90px; line-height: 0.8;
+  color: var(--amber-pale);
+  position: absolute; top: 20px; right: 24px;
+}
+.stars { color: var(--amber); font-size: 16px; margin-bottom: 16px; }
+.testi-text { font-size: 15px; color: var(--charcoal); line-height: 1.7; margin-bottom: 24px; }
+.testi-author { display: flex; align-items: center; gap: 12px; }
+.author-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 700;
+  flex-shrink: 0;
+}
+.av1 { background: #FFF0CC; color: var(--amber); }
+.av2 { background: #E0F0E6; color: var(--green); }
+.av3 { background: #F0E8FF; color: #7C4DFF; }
+.author-name { font-size: 15px; font-weight: 600; color: var(--charcoal); }
+.author-loc { font-size: 12px; color: var(--gray-mid); margin-top: 2px; }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer {
+  background: var(--charcoal);
+  padding: 60px 60px 30px;
+  color: rgba(255,255,255,0.6);
+}
+.footer-top {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 30px;
+  gap: 40px; flex-wrap: wrap;
+}
+.footer-brand .nav-logo span { color: #fff; font-size: 24px; }
+.footer-brand p { font-size: 14px; margin-top: 10px; max-width: 280px; line-height: 1.6; }
+
+.footer-col h4 { font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 18px; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 10px; }
+.footer-col a { text-decoration: none; font-size: 14px; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+.footer-col a:hover { color: var(--amber); }
+
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer-bottom p { font-size: 13px; }
+.footer-copy-right span { color: var(--amber); }
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-18px); }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  #hero { flex-direction: column; padding: 100px 24px 60px; text-align: center; }
+  .hero-stats { justify-content: center; }
+  .hero-actions { justify-content: center; }
+  .mango-illustration { width: 280px; height: 280px; font-size: 120px; }
+  #why, #packages, #shipping, #order, #testimonials { padding: 70px 24px; }
+  .order-wrapper { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  footer { padding: 40px 24px 20px; }
+  .footer-top { flex-direction: column; }
+}
+/* =========================================================
+   SECTION: GALLERY
+   ========================================================= */
+#gallery {
+  padding: 100px 60px;
+  background: var(--warm-white);
+}
+#gallery .section-label { color: var(--green); }
+#gallery .section-title { color: var(--charcoal); margin-bottom: 52px; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  cursor: pointer;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(29,92,46,0.85) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 28px;
+}
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+.gallery-text {
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  transform: translateY(15px);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.gallery-item:hover .gallery-text {
+  transform: translateY(0);
+}
+
+/* Adjust padding for mobile (Add inside your existing @media max-width: 900px block) */
+@media (max-width: 900px) {
+  #gallery { padding: 70px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <span class="icon">🥭</span>
+    <span>আমের রাজা</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#shipping">Shipping</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+  </ul>
+  <a href="#order" class="nav-cta">অর্ডার করুন →</a>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section id="hero">
+  <div class="hero-bg-text">আম</div>
+
+  <div class="hero-content">
+    <div class="hero-badge">🌿 ১০০% সতেজ · ফার্ম ফ্রেশ · বাংলাদেশ</div>
+    <h1 class="hero-title">
+      Bangladesh's <em>Finest</em><br>
+      <span class="green">Premium Mangoes</span><br>
+      Delivered Fresh
+    </h1>
+    <p class="hero-sub">
+      রাজশাহী ও চাঁপাইনবাবগঞ্জের সেরা আম সরাসরি বাগান থেকে আপনার দরজায়।
+      No middlemen. Pure sweetness. Guaranteed freshness.
+    </p>
+    <div class="hero-actions">
+      <a href="#packages" class="btn-primary">📦 প্যাকেজ দেখুন</a>
+      <a href="#order" class="btn-outline">অর্ডার করুন</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">5K+</div>
+        <div class="stat-label">Happy Customers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Mango Varieties</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">48H</div>
+        <div class="stat-label">Delivery Time</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="mango-illustration">🥭
+      <div class="badge-float top-left">🌿 Farm Fresh Certified</div>
+      <div class="badge-float bottom-right">⚡ Fast Delivery</div>
+    </div>
+  </div>
+</section>
+<section id="gallery">
+  <p class="section-label">সরাসরি বাগান থেকে</p>
+  <h2 class="section-title">Fresh From Our Orchards</h2>
+
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?auto=format&fit=crop&w=600&q=80" alt="Mangoes on Tree" loading="lazy">
+      <div class="gallery-overlay">
+        <span class="gallery-text">গাছপাকা আম</span>
+      </div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="https://4.imimg.com/data4/AT/RM/MY-29356566/indian-mangoes.jpg" alt="Harvesting Mangoes" loading="lazy">
+      <div class="gallery-overlay">
+        <span class="gallery-text">সতর্কতার সাথে সংগ্রহ</span>
+      </div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="https://www.thedailystar.net/sites/default/files/styles/big_1/public/images/2022/06/18/mango2.jpg?h=8b7966f8" alt="Fresh Mangoes" loading="lazy">
+      <div class="gallery-overlay">
+        <span class="gallery-text">১০০% সতেজতা</span>
+      </div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmZZit_3GuZYfmqjfUR2yIFjLq_c5IpXwIpA&s" alt="Mango Basket" loading="lazy">
+      <div class="gallery-overlay">
+        <span class="gallery-text">নিরাপদ প্যাকেজিং</span>
+      </div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkg3BJYo141eYh4lawFcAUnNBNKKQxJyA3tA&s" alt="Mango Farm" loading="lazy">
+      <div class="gallery-overlay">
+        <span class="gallery-text">রাজশাহীর বাগান</span>
+      </div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="data:image/jpeg;base64,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" alt="Premium Quality" loading="lazy">
+      <div class="gallery-overlay">
+        <span class="gallery-text">প্রিমিয়াম কোয়ালিটি</span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ==================== WHY US ==================== -->
+<section id="why">
+  <p class="section-label">কেন আমাদের বেছে নেবেন?</p>
+  <h2 class="section-title">Quality You Can Taste,<br>Trust You Can Feel</h2>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <span class="why-icon">🌾</span>
+      <h3>Direct from Farm</h3>
+      <p>সরাসরি রাজশাহী ও চাঁপাইনবাবগঞ্জের বাগান থেকে সংগ্রহ। No middlemen, maximum freshness.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">✅</span>
+      <h3>Quality Checked</h3>
+      <p>প্রতিটি আম হাতে বাছাই করা হয়। আমরা শুধুমাত্র পাকা, সুস্বাদু আম পাঠাই।</p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">📦</span>
+      <h3>Safe Packaging</h3>
+      <p>বিশেষ কার্টন প্যাকেজিং-এ পাঠানো হয় যাতে আম নষ্ট না হয় বা আঘাত না পায়।</p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">🚀</span>
+      <h3>Fast Delivery</h3>
+      <p>অর্ডার দেওয়ার ২৪-৪৮ ঘণ্টার মধ্যে সারা বাংলাদেশে ডেলিভারি দেওয়া হয়।</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PACKAGES ==================== -->
+<section id="packages">
+  <p class="section-label">আমাদের প্যাকেজ</p>
+  <h2 class="section-title">Choose Your Perfect Package</h2>
+  <p class="packages-intro">পরিবারের আকার ও চাহিদা অনুযায়ী আমাদের তিনটি প্যাকেজ থেকে বেছে নিন। সবগুলো ফ্রেশ হিমসাগর / ল্যাংড়া / আম্রপালি।</p>
+
+  <div class="packages-grid">
+    <!-- 5kg -->
+    <div class="pkg-card standard">
+      <span class="pkg-badge">স্টার্টার</span>
+      <span class="pkg-emoji">🥭</span>
+      <div class="pkg-weight">5 KG</div>
+      <div class="pkg-name">Starter Pack</div>
+      <div class="pkg-divider"></div>
+      <ul class="pkg-features">
+        <li>ফ্রেশ ফার্ম আম</li>
+        <li>হাতে বাছাই করা</li>
+        <li>নিরাপদ কার্টন প্যাক</li>
+        <li>ছোট পরিবারের জন্য আদর্শ</li>
+      </ul>
+      <div class="pkg-price">
+        <div class="price-main">৳ ৯৫০</div>
+        <div class="price-note">+ ডেলিভারি চার্জ আলাদা</div>
+      </div>
+      <button class="pkg-btn" onclick="selectPackage('5kg - Starter Pack - ৳৯৫০')">অর্ডার করুন →</button>
+    </div>
+
+    <!-- 10kg -->
+    <div class="pkg-card popular">
+      <span class="pkg-badge">⭐ সবচেয়ে জনপ্রিয়</span>
+      <span class="pkg-emoji">🥭🥭</span>
+      <div class="pkg-weight">10 KG</div>
+      <div class="pkg-name">Family Pack</div>
+      <div class="pkg-divider"></div>
+      <ul class="pkg-features">
+        <li>ডবল পরিমাণ ফ্রেশ আম</li>
+        <li>হাতে বাছাই + গ্রেডেড</li>
+        <li>প্রিমিয়াম কার্টন প্যাক</li>
+        <li>পরিবার ও উপহারের জন্য পারফেক্ট</li>
+      </ul>
+      <div class="pkg-price">
+        <div class="price-main">৳ ১,৭৫০</div>
+        <div class="price-note">+ ডেলিভারি চার্জ আলাদা</div>
+      </div>
+      <button class="pkg-btn" onclick="selectPackage('10kg - Family Pack - ৳১৭৫০')">অর্ডার করুন →</button>
+    </div>
+
+    <!-- 20kg -->
+    <div class="pkg-card premium">
+      <span class="pkg-badge">💎 PREMIUM</span>
+      <span class="pkg-emoji">🥭🥭🥭</span>
+      <div class="pkg-weight">20 KG</div>
+      <div class="pkg-name">Mega Pack</div>
+      <div class="pkg-divider"></div>
+      <ul class="pkg-features">
+        <li>বড় পরিমাণ – সর্বোচ্চ সঞ্চয়</li>
+        <li>টপ গ্রেড + রিজার্ভড সিলেকশন</li>
+        <li>ডাবল-লেয়ার প্রিমিয়াম প্যাক</li>
+        <li>ব্যবসায়িক ও বড় পরিবারের জন্য</li>
+      </ul>
+      <div class="pkg-price">
+        <div class="price-main">৳ ৩,২০০</div>
+        <div class="price-note">+ ডেলিভারি চার্জ আলাদা</div>
+      </div>
+      <button class="pkg-btn" onclick="selectPackage('20kg - Mega Pack - ৳৩২০০')">অর্ডার করুন →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SHIPPING ==================== -->
+<section id="shipping">
+  <p class="section-label">ডেলিভারি তথ্য</p>
+  <h2 class="section-title">Simple Shipping,<br>Everywhere in Bangladesh</h2>
+  <p class="shipping-sub">আমরা সারা বাংলাদেশে ডেলিভারি দিই। সহজ দুটো রেট, কোনো লুকানো চার্জ নেই।</p>
+
+  <div class="shipping-cards">
+    <div class="ship-card inside">
+      <div class="ship-icon">🏙️</div>
+      <div class="ship-info">
+        <h3>ঢাকার ভেতরে</h3>
+        <p>Inside Dhaka City — দ্রুততম ডেলিভারি, সাধারণত ২৪ ঘণ্টার মধ্যে।</p>
+        <div class="ship-price">
+          <strong>৳ ৮০</strong>
+          <span>প্রতি অর্ডার</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ship-card outside">
+      <div class="ship-icon">🗺️</div>
+      <div class="ship-info">
+        <h3>ঢাকার বাইরে</h3>
+        <p>Outside Dhaka — সারা বাংলাদেশে কুরিয়ারে ৪৮ ঘণ্টার মধ্যে পৌঁছে দেই।</p>
+        <div class="ship-price">
+          <strong>৳ ১২০</strong>
+          <span>প্রতি অর্ডার</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ORDER FORM ==================== -->
+<section id="order">
+  <div class="order-wrapper">
+    <div class="order-info">
+      <p class="section-label">এখনই অর্ডার দিন</p>
+      <h2 class="section-title">Get Fresh Mangoes<br>Delivered to You</h2>
+      <p>ফর্মটি পূরণ করুন — আমরা শীঘ্রই আপনার সাথে যোগাযোগ করে অর্ডার কনফার্ম করব।</p>
+      <ul class="trust-list">
+        <li><span class="ticon">🔒</span> আপনার তথ্য সম্পূর্ণ সুরক্ষিত</li>
+        <li><span class="ticon">📞</span> অর্ডার কনফার্মেশনের জন্য কল করা হবে</li>
+        <li><span class="ticon">💰</span> ক্যাশ অন ডেলিভারি (COD) সুবিধা আছে</li>
+        <li><span class="ticon">↩️</span> মান সন্তোষজনক না হলে রিফান্ড গ্যারান্টি</li>
+      </ul>
+    </div>
+
+    <div class="order-form-box">
+      <div class="form-title">📦 অর্ডার ফর্ম</div>
+      <div class="form-subtitle">সকল তথ্য সঠিকভাবে পূরণ করুন</div>
+
+      <form id="orderForm" onsubmit="submitOrder(event)">
+        <div class="form-group">
+          <label for="name">আপনার নাম *</label>
+          <input type="text" id="name" name="name" placeholder="পূর্ণ নাম লিখুন" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">মোবাইল নম্বর *</label>
+          <input type="tel" id="phone" name="phone" placeholder="01XXXXXXXXX" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="package">প্যাকেজ *</label>
+            <select id="package" name="package" required>
+              <option value="">প্যাকেজ বেছে নিন</option>
+              <option value="5kg">🥭 5 KG – ৳৯৫০</option>
+              <option value="10kg">🥭🥭 10 KG – ৳১৭৫০</option>
+              <option value="20kg">🥭🥭🥭 20 KG – ৳৩২০০</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="location">লোকেশন *</label>
+            <select id="location" name="location" onchange="updateShipping()" required>
+              <option value="">এলাকা বেছে নিন</option>
+              <option value="inside">ঢাকার ভেতরে (+৳৮০)</option>
+              <option value="outside">ঢাকার বাইরে (+৳১২০)</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="shippingNotice" class="shipping-notice" style="display:none">
+          <span>🚚</span>
+          <span id="shippingText">ডেলিভারি চার্জ</span>
+        </div>
+
+        <div class="form-group">
+          <label for="address">সম্পূর্ণ ঠিকানা *</label>
+          <textarea id="address" name="address" rows="3" placeholder="বাড়ি নং, রাস্তা, এলাকা, জেলা..." required style="resize:vertical"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="note">বিশেষ নির্দেশনা (ঐচ্ছিক)</label>
+          <input type="text" id="note" name="note" placeholder="কোনো বিশেষ অনুরোধ থাকলে লিখুন">
+        </div>
+
+        <button type="submit" class="btn-submit">
+          ✅ অর্ডার সাবমিট করুন
+        </button>
+        <p class="form-secure">🔒 আপনার তথ্য সম্পূর্ণ নিরাপদ এবং গোপনীয়</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TESTIMONIALS ==================== -->
+<section id="testimonials">
+  <p class="section-label">Customer Reviews</p>
+  <h2 class="section-title">আমাদের গ্রাহকরা কী বলছেন</h2>
+
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">অনেক সুস্বাদু আম পেয়েছি! রাজশাহীর হিমসাগর মানে যে এত মিষ্টি হয় বিশ্বাস করিনি। প্যাকেজিংও খুব সুন্দর ছিল।</p>
+      <div class="testi-author">
+        <div class="author-avatar av1">র</div>
+        <div>
+          <div class="author-name">রাহেলা বেগম</div>
+          <div class="author-loc">📍 ঢাকা, মিরপুর</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">10 কেজি প্যাকেজ নিয়েছিলাম। সব আম ফ্রেশ এবং পারফেক্টলি রাইপ ছিল। পরিবারের সবাই খুব খুশি। আবার অর্ডার করব।</p>
+      <div class="testi-author">
+        <div class="author-avatar av2">ক</div>
+        <div>
+          <div class="author-name">করিম সাহেব</div>
+          <div class="author-loc">📍 চট্টগ্রাম</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">Delivery was super fast! Ordered in the morning and received by evening the next day. Quality is unmatched — way better than market mangoes.</p>
+      <div class="testi-author">
+        <div class="author-avatar av3">স</div>
+        <div>
+          <div class="author-name">সাদিয়া ইসলাম</div>
+          <div class="author-loc">📍 সিলেট</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <span class="icon">🥭</span>
+        <span>আমের রাজা</span>
+      </div>
+      <p>বাংলাদেশের সেরা প্রিমিয়াম আম সরাসরি আপনার দোরগোড়ায়। ফার্ম ফ্রেশ, সবসময়।</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#why">কেন আমরা?</a></li>
+        <li><a href="#packages">প্যাকেজসমূহ</a></li>
+        <li><a href="#shipping">ডেলিভারি</a></li>
+        <li><a href="#order">অর্ডার করুন</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+8801700000000">📞 01794818903</a></li>
+        <li><a href="mailto:info@amerraja.com">✉️ me@imrandev.bd</a></li>
+        <li><a href="#">🕐 ৯টা – ৯টা, প্রতিদিন</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 <span class="footer-copy-right"><span>আমের রাজা</span></span>. সর্বস্বত্ব সংরক্ষিত।</p>
+    <p>Made with ❤️ in Bangladesh 🇧🇩</p>
+  </div>
+</footer>
+
+<script>
+function updateShipping() {
+  const loc = document.getElementById('location').value;
+  const notice = document.getElementById('shippingNotice');
+  const text = document.getElementById('shippingText');
+  if (loc === 'inside') {
+    notice.style.display = 'flex';
+    text.textContent = '✅ ঢাকার ভেতরে ডেলিভারি চার্জ: ৳৮০';
+  } else if (loc === 'outside') {
+    notice.style.display = 'flex';
+    text.textContent = '✅ ঢাকার বাইরে ডেলিভারি চার্জ: ৳১২০';
+  } else {
+    notice.style.display = 'none';
+  }
+}
+
+function selectPackage(pkg) {
+  document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+  setTimeout(() => {
+    const sel = document.getElementById('package');
+    if (pkg.includes('5kg')) sel.value = '5kg';
+    else if (pkg.includes('10kg')) sel.value = '10kg';
+    else if (pkg.includes('20kg')) sel.value = '20kg';
+  }, 600);
+}
+
+function submitOrder(e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const pkg = document.getElementById('package').value;
+  const loc = document.getElementById('location').value;
+  const address = document.getElementById('address').value;
+  const note = document.getElementById('note').value;
+
+  const params = new URLSearchParams({ name, phone, pkg, loc, address, note });
+  window.location.href = 'thankyou.html?' + params.toString();
+}
+</script>
+</body>
+</html>
