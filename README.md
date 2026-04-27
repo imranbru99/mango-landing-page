@@ -1,14 +1,13 @@
 
+# 🥭 Mango Landing Page
 
-# 🍒 Litchi Premium Landing
-
-Elegant and high-end litchi landing page with refined UI and responsive design.
+A modern and responsive mango-themed landing page built with clean UI and smooth user experience.
 
 ---
 
 ## ✨ Overview
 
-**Litchi Premium Landing** is a modern, visually appealing landing page designed to showcase a premium litchi (lychee) brand. It focuses on clean design, smooth user experience, and responsiveness across all devices.
+**Mango Landing Page** is a visually appealing and fully responsive landing page designed to showcase mango-based products or brands. It focuses on simplicity, performance, and elegant design.
 
 This project is perfect for:
 
@@ -20,13 +19,13 @@ This project is perfect for:
 
 ## 🚀 Features
 
-* 🎨 Elegant and premium UI design
+* 🎨 Clean and modern UI design
 * 📱 Fully responsive (mobile, tablet, desktop)
 * ⚡ Fast loading and optimized performance
 * 🧭 Smooth scrolling navigation
 * 🖼️ Beautiful sections (Hero, About, Products, Contact)
-* 🎯 Clean and well-structured code
-* 🌈 Modern layout and typography
+* 🎯 Well-structured and readable code
+* 🌈 Attractive color scheme and layout
 
 ---
 
@@ -40,7 +39,7 @@ This project is perfect for:
 
 ## 📂 Project Structure
 
-litchi-premium-landing/
+mango-landing-page/
 │── index.html
 │── css/
 │   └── style.css
@@ -73,7 +72,7 @@ litchi-premium-landing/
 
 ## 🌍 Live Demo
 
-👉 [https://imranbru99.github.io/litchi-premium-landing/](https://imranbru99.github.io/litchi-premium-landing/)
+👉 [https://imranbru99.github.io/mango-landing-page/](https://imranbru99.github.io/mango-landing-page/)
 
 ---
 
@@ -108,4 +107,3 @@ This project is open-source and available under the MIT License.
 If you like this project, give it a ⭐ on GitHub!
 
 ---
-
