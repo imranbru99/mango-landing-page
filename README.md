@@ -1,8 +1,4 @@
-# mango-landing-page
-A fresh and vibrant landing page design inspired by mango products, featuring smooth UI and responsive layout.
-Got it — here’s a **clean, copy-paste ready `README.md`** (no broken blocks, properly formatted):
 
----
 
 # 🍒 Litchi Premium Landing
 
@@ -57,27 +53,33 @@ litchi-premium-landing/
 
 ## 📸 Preview
 
-Add a screenshot of your project here:
-
 ![Preview](./images/preview.png)
+
+*(Add your screenshot inside the images folder)*
 
 ---
 
 ## ⚙️ Installation & Usage
 
 1. Clone the repository
-   git clone [https://github.com/your-username/litchi-premium-landing.git](https://github.com/your-username/litchi-premium-landing.git)
+   git clone [https://github.com/imranbru99/mango-landing-page.git](https://github.com/imranbru99/mango-landing-page.git)
 
 2. Navigate into the folder
-   cd litchi-premium-landing
+   cd mango-landing-page
 
-3. Open index.html in your browser
+3. Open `index.html` in your browser
 
 ---
 
 ## 🌍 Live Demo
 
-[https://your-live-demo-link.com](https://your-live-demo-link.com)
+👉 [https://imranbru99.github.io/litchi-premium-landing/](https://imranbru99.github.io/litchi-premium-landing/)
+
+---
+
+## 🔗 GitHub Repository
+
+👉 [https://github.com/imranbru99/mango-landing-page](https://github.com/imranbru99/mango-landing-page)
 
 ---
 
@@ -107,11 +109,3 @@ If you like this project, give it a ⭐ on GitHub!
 
 ---
 
-If you want next level, I can upgrade this with:
-
-* GitHub badges (cool icons at top)
-* animated preview GIF
-* dark/light theme section
-* or make it look like a **top 1% dev README**
-
-Just say 👍
