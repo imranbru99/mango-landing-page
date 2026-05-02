@@ -84,7 +84,7 @@ mango-landing-page/
 
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to fork this repository and submit a pull request.
+Contributions are welcome! Feel free to fork this repository and submit a pull request. change it
 
 ---
 
